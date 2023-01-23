@@ -1,7 +1,8 @@
 import { useState, useContext } from 'react';
 import { AppContext } from '../../App';
 import { notifySorry } from '../../utilities/toastNotifyFunc';
-import './welcome.scss';
+import { TextField, Box, Container, Card, Button, Typography } from '@mui/material';
+// import './welcome.scss';
 
 
 const Welcome = () => {
@@ -30,17 +31,20 @@ const Welcome = () => {
         });
     }
     return (
-        <div className='welcome-container'>
-            <h1>Welcome to "Draw & Guess"</h1>
-            <form onSubmit={handleSubmit}>
-                <input type='text'
-                    placeholder='enter your name'
+        <Container component="main" maxWidth="xs" sx={{mt:10,p:3, boxShadow: '0 4px 16px rgba(0, 0, 0, 0.1)',borderRadius: 5 }} elevation={3}>
+            <Typography component="h1" variant="h3" align="center">
+                Draw & Guess
+            </Typography>
+            <Box component="form" onClick={handleSubmit} align="center" m={2}>
+                <TextField type='text'
+                    placeholder='Enter your name'
                     name='name'
-                    maxLength='10'
+                    fullWidth
+                    size="small"
                     onChange={e => changeInput(e.target.value)} />
-                <button>Enter</button>
-            </form>
-        </div>
+                <Button  variant="contained" fullWidth sx={{mt:2}}>Enter</Button>
+            </Box>
+        </Container>
     )
 }
 
