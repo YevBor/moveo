@@ -1,14 +1,14 @@
 const players = [];
 
-// checks if a user is in the players array by a user name (true/false)
+
 const findUsername = username => {
     return players.some(p => p.username === username);
 }
-// finds the index of a specific user in the players array by the socketId
+
 const findIndx = socketId => {
     return players.findIndex(p => p.socketId === socketId);
 }
-// finds the user in the players array by the socket id
+
 const findUserById = socketId => {
     return players.find(p => p.socketId === socketId);
 }
