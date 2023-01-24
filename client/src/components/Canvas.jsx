@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, useContext } from 'react';
-import { AppContext } from '../../App';
-import Controls from '../controls/Controls';
+import { AppContext } from '../App';
+import Controls from './Controls';
 
 import { Container, Button } from '@mui/material';
 

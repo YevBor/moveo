@@ -1,19 +1,12 @@
 import { useState, useContext } from 'react';
-import { AppContext } from '../../App';
-import { notifySorry } from '../../utilities/toastNotifyFunc';
-import {
-  TextField,
-  Box,
-  Container,
-  Button,
-  Typography,
-} from '@mui/material';
-
+import { AppContext } from '../App';
+import { notifySorry } from '../utilities/toastNotifyFunc';
+import { TextField, Box, Container, Button, Typography } from '@mui/material';
 
 const Welcome = () => {
   const { setUsername, setTurn, setRoomNo } = useContext(AppContext).user;
   const { socket } = useContext(AppContext);
- 
+
   const [input, changeInput] = useState('');
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -57,10 +50,9 @@ const Welcome = () => {
           name="name"
           fullWidth
           size="small"
-         
           onChange={(e) => changeInput(e.target.value)}
         />
-        <Button variant="contained" fullWidth sx={{ mt: 2 , borderRadius:5}}>
+        <Button variant="contained" fullWidth sx={{ mt: 2, borderRadius: 5 }}>
           Enter
         </Button>
       </Box>

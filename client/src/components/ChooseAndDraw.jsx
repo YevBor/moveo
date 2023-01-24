@@ -1,12 +1,7 @@
-import { useEffect, 
-    useContext 
-} from 'react';
-import { AppContext 
-} from '../../App';
-import Canvas from '../canvas/Canvas';
-import { categories, 
-    generateWord 
-} from '../../utilities/generateWords';
+import { useEffect, useContext } from 'react';
+import { AppContext } from '../App';
+import Canvas from './Canvas';
+import { categories, generateWord } from '../utilities/generateWords';
 import {
   Container,
   Button,
@@ -83,10 +78,8 @@ const ChooseAndDraw = (props) => {
           </Typography>
           <List>
             {list.map((level) => (
+              
               <ListItem key={level[0]}>
-                <ListItemText sx={{ flex: 1 }} align="left">
-                  {level[0]}
-                </ListItemText>
                 <Button
                   variant="contained"
                   data-points={level[1].points}

@@ -14,7 +14,7 @@ class Word {
 }
 
 function point(word){
-    if(word.length <= 3){
+    if(word.length <= 4){
         return 1;
     }if(word.length == 5){
         return 5;
