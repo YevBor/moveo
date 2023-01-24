@@ -1,8 +1,7 @@
 import { useContext, useState, useEffect } from 'react';
 import { AppContext } from '../../App';
 import { notifySuccess, notifySorry } from '../../utilities/toastNotifyFunc';
-import ready from '../../assets/readyIcon.png';
-import leave from '../../assets/logoutIcon.png';
+
 
 import { Button, Box, TextField } from '@mui/material';
 

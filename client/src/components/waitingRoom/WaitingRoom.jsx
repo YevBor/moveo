@@ -1,6 +1,7 @@
 import { useContext, useEffect } from 'react';
 import { AppContext } from '../../App';
-import './waitingRoom.scss';
+// import './waitingRoom.scss';
+import { Paper,Container, Typography,LinearProgress} from '@mui/material';
 
 const WaitingRoom = ({ startGame, setGuessTheWord }) => {
 
@@ -19,14 +20,23 @@ const WaitingRoom = ({ startGame, setGuessTheWord }) => {
     }, [socket, setTurn, setGuessTheWord]);
     let message = '';
     if (!startGame) {
-        message = 'Waiting for other player ...'
+        message = 'Waiting for other player'
     } else {
-        message = 'Your turn starts soon ...';
+        message = 'Your turn starts soon';
     }
     return (
-        <div className='waiting-room'>
-            <h3>{message}</h3>
-        </div>
+        <Container 
+        maxWidth="xs"
+        sx={{
+          mt: 10,
+          p: 2,
+          boxShadow: '0 4px 16px rgba(0, 0, 0, 0.1)',
+          borderRadius: 5,
+        }}
+        elevation={3} className='waiting-room'>
+            <Typography component="h2" variant="h4" align='center'>{message}</Typography>
+            <LinearProgress />
+        </Container>
     )
 }
 
