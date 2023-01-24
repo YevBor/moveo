@@ -4,7 +4,7 @@ import ChooseAndDraw from '../chooseAndDraw/ChooseAndDraw';
 import Nav from '../nav/Nav';
 import WaitingRoom from '../waitingRoom/WaitingRoom';
 import { categories, generateWord } from '../../utilities/generateWords';
-import './game.scss';
+
 
 const Game = () => {
     const { turn, username, roomNo } = useContext(AppContext).user;

@@ -57,9 +57,10 @@ const Welcome = () => {
           name="name"
           fullWidth
           size="small"
+         
           onChange={(e) => changeInput(e.target.value)}
         />
-        <Button variant="contained" fullWidth sx={{ mt: 2 }}>
+        <Button variant="contained" fullWidth sx={{ mt: 2 , borderRadius:5}}>
           Enter
         </Button>
       </Box>

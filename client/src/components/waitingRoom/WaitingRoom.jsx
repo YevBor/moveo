@@ -1,6 +1,5 @@
 import { useContext, useEffect } from 'react';
 import { AppContext } from '../../App';
-// import './waitingRoom.scss';
 import { Paper,Container, Typography,LinearProgress} from '@mui/material';
 
 const WaitingRoom = ({ startGame, setGuessTheWord }) => {

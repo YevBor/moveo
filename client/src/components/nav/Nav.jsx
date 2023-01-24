@@ -36,12 +36,12 @@ const Nav = (props) => {
   }, [socket, setUsername]);
 
   return (
-    <AppBar position="static" sx={{ mb: 10 }}>
+    <AppBar position="static" size="sm" sx={{ mb: 10, borderRadius:7 }}>
       <Toolbar>
         <Grid container alignItems="center">
           <Grid item xs={3}>
-            <Typography variant="h5">{username}</Typography>
-            <Typography variant="h6">{score}</Typography>
+            <Typography variant="h5" align='right'>{username}</Typography>
+            <Typography variant="h6" align='right'>{score}</Typography>
           </Grid>
           <Grid item xs={6}>
             <Typography variant="h6" align="center">
@@ -53,10 +53,10 @@ const Nav = (props) => {
             </Typography>
           </Grid>
           <Grid item xs={3}>
-            <Typography variant="h5" align="right">
+            <Typography variant="h5" align="left" >
               {opponent}
             </Typography>
-            <Typography variant="h6" align="right">
+            <Typography variant="h6" align="left">
               {opponentScore}
             </Typography>
           </Grid>

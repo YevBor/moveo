@@ -3,7 +3,7 @@ import { io } from 'socket.io-client';
 import { Toaster } from 'react-hot-toast';
 import Game from './components/game/Game';
 import Welcome from './components/welcome/Welcome';
-import './styles.scss';
+import './styles.css';
 
 export const AppContext = createContext(null);
 

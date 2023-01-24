@@ -1,17 +1,8 @@
 import { useEffect, useRef, useState, useContext } from 'react';
 import { AppContext } from '../../App';
 import Controls from '../controls/Controls';
-import { colors } from '../../utilities/colors';
 
-import {
-  Container,
-  Button,
-  Typography,
-  List,
-  ListItem,
-  ListItemText,
-} from '@mui/material';
-// import './canvas.scss';
+import { Container, Button } from '@mui/material';
 
 const Canvas = (props) => {
   const {
@@ -32,7 +23,6 @@ const Canvas = (props) => {
   const { roomNo, setTurn } = useContext(AppContext).user;
   const socket = useContext(AppContext).socket;
   const [isDrawing, setIsDrawing] = useState(false);
-  const [selectedColor, setSelectedColor] = useState(colors[0]);
   const [position, setPosition] = useState({ x: undefined, y: undefined });
   const canvasRef = useRef(null);
   const contextRef = useRef(null);
@@ -42,10 +32,10 @@ const Canvas = (props) => {
     const context = canvas.getContext('2d');
     // initial setting for the context
     context.lineCap = 'round'; //round endings for the lines
-    context.strokeStyle = selectedColor; //initial color of the pen
+    context.strokeStyle = 'black'; //initial color of the pen
     window.innerWidth > 425 ? (context.lineWidth = 6) : (context.lineWidth = 3); //pen width
     contextRef.current = context;
-  }, [selectedColor]);
+  });
 
   useEffect(() => {
     const { imgData } = guessTheWord;
@@ -136,7 +126,7 @@ const Canvas = (props) => {
       />
 
       {guessTheWord.word === '' ? (
-        <Button id="send" onClick={send} sx={{borderRadius:5}}>
+        <Button id="send" onClick={send} sx={{ borderRadius: 5 }}>
           Send
         </Button>
       ) : (
