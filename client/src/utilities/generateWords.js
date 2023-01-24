@@ -13,6 +13,15 @@ class Word {
     }
 }
 
+function point(word){
+    if(word.length <= 3){
+        return 1;
+    }if(word.length == 5){
+        return 5;
+    }
+    return 6;
+}
+
 export const generateWord = category => {
     const word = generateSlug(1, {
         partsOfSpeech: ['noun'],
@@ -20,5 +29,6 @@ export const generateWord = category => {
             noun: [`${category.words}`]
         }
     });
-    return new Word(word, category.points);
+    const p = point(word)
+    return new Word(word, p);
 }
