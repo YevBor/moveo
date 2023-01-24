@@ -2,6 +2,13 @@ import { useContext, useEffect, useState } from 'react';
 import { AppContext } from '../../App';
 import { notifyError } from '../../utilities/toastNotifyFunc';
 import './nav.scss';
+import {
+    TextField,
+    Box,
+    Container,
+    Button,
+    Typography,AppBar, Toolbar,Grid
+  } from '@mui/material';
 
 
 const Nav = (props) => {
@@ -43,24 +50,24 @@ const Nav = (props) => {
     }, [socket, setUsername]);
 
     return (
-        <nav className='nav'>
-            <div className='left'>
-                <div className='top'>{username}</div>
-                <div className='bottom'>{score}</div>
-            </div>
-            <div className='center'>
-                <div className='top'>Time left: {timer}</div>
-                <div className='bottom'>
-                    You word is <span className='word-guess'>
-                        {selectedWord.word === '' ? ' ...' : selectedWord.word}
-                    </span>
-                </div>
-            </div>
-            <div className='right'>
-                <div className='top'>{opponent}</div>
-                <div className='bottom'>{opponentScore}</div>
-            </div>
-        </nav>
+        <AppBar position="static" sx={{mb:10}}>
+            <Toolbar>
+            <Grid container alignItems="center">
+                <Grid item xs={3} >
+                    <Typography variant="h5">{username}</Typography>
+                    <Typography variant="h6">{score}</Typography>
+                </Grid>
+                <Grid item xs={6}>
+                    <Typography variant="h6" align="center">Time left: {timer}</Typography>
+                    <Typography variant="h6" align="center">You word is {selectedWord.word === '' ? ' ...' : selectedWord.word}</Typography>
+                </Grid>
+                <Grid item xs={3}>
+                    <Typography variant="h5" align="right">{opponent}</Typography>
+                    <Typography variant="h6" align="right">{opponentScore}</Typography>
+                </Grid>
+            </Grid>
+            </Toolbar>
+        </AppBar>
     )
 }
 

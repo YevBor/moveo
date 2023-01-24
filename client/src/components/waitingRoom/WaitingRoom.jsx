@@ -19,7 +19,7 @@ const WaitingRoom = ({ startGame, setGuessTheWord }) => {
     }, [socket, setTurn, setGuessTheWord]);
     let message = '';
     if (!startGame) {
-        message = 'Waiting for other player to connect ...'
+        message = 'Waiting for other player ...'
     } else {
         message = 'Your turn starts soon ...';
     }
