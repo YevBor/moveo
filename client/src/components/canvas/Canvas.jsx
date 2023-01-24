@@ -19,6 +19,10 @@ const Canvas = (props) => {
         setScore
     } = props;
 
+
+
+    const { turn } = useContext(AppContext).user;
+
     const { roomNo, setTurn } = useContext(AppContext).user;
     const socket = useContext(AppContext).socket;
     const [isDrawing, setIsDrawing] = useState(false);
@@ -94,6 +98,7 @@ const Canvas = (props) => {
     }
     return (
         <div className={'canvas-container' + (!timerStart ? ' deactivated' : '')}>
+            {console.log(turn)}
             <canvas
                 width={300}
                 height={300}

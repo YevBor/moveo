@@ -72,8 +72,6 @@ const ChooseAndDraw = (props) => {
       word: e.target.innerText.toLowerCase(),
       points: e.target.dataset.points,
     });
-    console.log(e.target.innerText.toLowerCase());
-    console.log(e.target.dataset.points);
     SetTimerStart(true);
   };
   return (
