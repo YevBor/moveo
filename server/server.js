@@ -4,8 +4,11 @@ const http = require('http');
 const { Server } = require('socket.io');
 const cors = require('cors');
 const { config } =  require('dotenv');
+const path = require("path");
 
 const playersController = require('./src/controllers.js');
+
+app.use(express.static(path.join(__dirname + "/public")))
 
 
 config();
